@@ -1,0 +1,191 @@
+# 🚀 KIZASHI – Behavioural Drift Modelling & Adaptive Productivity Intelligence System
+
+## 📌 Overview
+
+KIZASHI is an AI-powered behavioral intelligence system that analyzes user activity patterns to detect productivity drift and provide actionable insights.
+
+The system computes a **Behavioral Drift Index (BDI)** using personalized baselines and combines it with a machine learning model to predict user productivity risk levels.
+
+---
+
+## 🧠 Core Features
+
+* 📊 Behavioral Drift Index (BDI) calculation
+* 📉 Personalized baseline tracking
+* ⚠️ Risk classification (Low / Moderate / High)
+* 🤖 Machine Learning prediction (Random Forest)
+* 💡 Insight generation for user behavior
+* 🔌 REST API using FastAPI
+
+---
+
+## ⚙️ Tech Stack
+
+* **Backend (AI Engine):** Python, FastAPI
+* **Machine Learning:** Scikit-learn
+* **Data Processing:** Pandas, NumPy
+* **Model Serialization:** Joblib
+
+---
+
+## 📁 Project Structure
+
+```
+Kizashi/
+│
+├── main.py
+├── kizashi_model.pkl
+├── features.pkl
+├── kizashi_dataset.csv
+├── requirements.txt
+```
+
+---
+
+## 🚀 Setup Instructions
+
+### 🔹 1. Clone / Download Project
+
+```bash
+git clone <repo-link>
+cd Kizashi
+```
+
+---
+
+### 🔹 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 🔹 3. Run FastAPI Server
+
+```bash
+python -m uvicorn main:app --reload
+```
+
+---
+
+### 🔹 4. Open API Docs
+
+Go to:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## 📡 API Endpoint
+
+### 🔹 POST `/predict`
+
+#### 📥 Input
+
+```json
+{
+  "user_id": 1,
+  "date": "2026-02-01",
+  "study_hours": 4,
+  "screen_time": 6,
+  "focus_sessions": 3,
+  "mood_score": 5,
+  "stress_level": 6,
+  "motivation_level": 4,
+  "sleep_hours": 6,
+  "energy_level": 5,
+  "routine_score": 60,
+  "tasks_completed": 5,
+  "tasks_planned": 10
+}
+```
+
+---
+
+#### 📤 Output
+
+```json
+{
+  "BDI": 0.45,
+  "risk_level": "Moderate",
+  "ml_prediction": "Moderate",
+  "insight": "Your behavior is stable."
+}
+```
+
+---
+
+## 🧠 System Architecture
+
+```
+User Input
+   ↓
+Feature Engineering
+   ↓
+Baseline Calculation
+   ↓
+Drift Computation
+   ↓
+BDI (Behavioral Drift Index)
+   ↓
+Rule-Based Risk Classification
+   ↓
+ML Model Prediction
+   ↓
+Insights Generation
+   ↓
+API Response
+```
+
+---
+
+## 👥 Team Integration Guide
+
+### 🔹 Frontend Team
+
+* Build UI form for user inputs
+* Call API endpoint `/predict`
+* Display:
+
+  * BDI Score
+  * Risk Level
+  * ML Prediction
+  * Insight
+
+---
+
+### 🔹 Backend Team
+
+* Can directly consume FastAPI
+* Or proxy through Node.js backend
+
+---
+
+## ⚠️ Important Notes
+
+* BDI is the **primary decision metric**
+* ML model is used for **supporting prediction**
+* Dataset currently acts as **user history**
+* Can be replaced with **MongoDB in production**
+
+---
+
+## 🚀 Future Enhancements
+
+* 📊 Dashboard with trend visualization
+* 🧠 Adaptive recommendation engine
+* ☁️ Cloud deployment (AWS / Render)
+* 🗄️ Database integration (MongoDB)
+* 🔐 Authentication system
+
+---
+
+## 💡 Key Innovation
+
+KIZASHI introduces a **Behavioral Drift Index (BDI)** that captures deviation from personal baselines, enabling interpretable and personalized productivity intelligence.
+
+---
+
